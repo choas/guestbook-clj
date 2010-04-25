@@ -1,10 +1,10 @@
 (ns guestbook.greetings-test
   (:use
     clojure.contrib.test-is
-    appengine-clj.test-utils)
+    appengine.test-utils)
   (:require
     [guestbook.greetings      :as greetings]
-    [appengine-clj.datastore  :as ds])
+    [appengine.datastore  :as ds])
   (:import
     (com.google.appengine.api.datastore Query)))
 
@@ -25,6 +25,6 @@
 (dstest find-all-sorts-by-date-from-oldest-to-newest
   (let [recent-item (greetings/create "Hiyo." "hume")
         more-recent-item (greetings/create "Yup." "hume")
-        old-item (ds/create {:kind "Greeting" :content "It's 1970!" :author "hume" :date (java.util.Date. (long 0))})]
+        old-item (ds/create-entity {:kind "Greeting" :content "It's 1970!" :author "hume" :date (java.util.Date. (long 0))})]
     (is (= ["It's 1970!" "Hiyo." "Yup."]
            (map :content (greetings/find-all))))))

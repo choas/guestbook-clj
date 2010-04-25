@@ -2,12 +2,12 @@
   (:gen-class
     :extends javax.servlet.http.HttpServlet)
   (:use
-    compojure.http
+    [compojure.http servlet routes helpers]
     compojure.html)
   (:require
     [guestbook.greetings    :as greetings]
     [guestbook.clj-exercise :as clj-exercise]
-    [appengine-clj.users    :as users]))
+    [appengine.users        :as users]))
 
 
 (defn show-guestbook [{:keys [user user-service]}]
