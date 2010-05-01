@@ -7,9 +7,10 @@ John Hume for his blog post [Clojure on Google AppEngine](http://elhumidor.blogs
 
 ----
 
-This up-to-date version uses  
-* appengine 0.1 from [r0man / appengine-clj](http://github.com/r0man/appengine-clj)
-* compojure-gae 0.3.3 from [choas / compojure-gae](http://github.com/choas/compojure-gae)
+This up-to-date version uses:
+
+* org.clojars.choas/appengine-clj 0.2-SNAPSHOT from [choas / appengine-clj](http://github.com/choas/appengine-clj) and
+* compojure-gae 0.3.4-SNAPSHOT from [choas / compojure-gae](http://github.com/choas/compojure-gae)
 
 To compile and start just use [Leiningen](http://github.com/technomancy/leiningen):
     lein compile
